@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="b76cf7f1-fb13-48ce-99b2-0ffa0a3b6524" >
+		<http:listener-connection host="0.0.0.0" port="8087" />
+	</http:listener-config>
+	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="e7ceb6c6-ae76-4251-8ca9-7744d13d01af">
+		<http:request-connection host="edamam-food-and-grocery-database.p.rapidapi.com" protocol="HTTPS"/>
+	</http:request-config>
+	<flow name="foodserviceFlow" doc:id="e30326ce-71ca-41c4-877d-3a91d31f34d4" >
+		<http:listener doc:name="Listener" doc:id="7fe44663-453e-4053-8a70-8ff7495460e4" config-ref="HTTP_Listener_config" path="getFood/{ingr}"/>
+		<http:request method="GET" doc:name="Request" doc:id="9a176473-e07d-4656-a934-9523f5e7cb4d" config-ref="HTTP_Request_configuration" path="/parser">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"x-rapidapi-key" : "43d6f5d9demsh11321ffeadb78cbp195337jsn8ea2dfc6f810",
+	"x-rapidapi-host" : "edamam-food-and-grocery-database.p.rapidapi.com"
+}]]]></http:headers>
+			<http:query-params ><![CDATA[#[output application/java
+---
+{
+	"ingr" : attributes.uriParams.ingr
+}]]]></http:query-params>
+		</http:request>
+	</flow>
+</mule>
