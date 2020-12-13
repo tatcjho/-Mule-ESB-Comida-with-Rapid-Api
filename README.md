@@ -31,7 +31,37 @@ Su API le proporciona herramientas para encontrar datos de nutrición y dieta pa
 #### PASO 1: 
 ##### Instalación de AnypointStudio: https://www.mulesoft.com/lp/dl/studio
 Posterior a la descarga, se instala normalmente seleccionando donde queremos nuestro carpeta de trabajo  y abrimos. 
+La arqutiectura que se visualiza a continuación es un HTTP listener, donde indicaremos el puerto, el path de nuestro servicio que obtendremos y la direccion a la que enviaremos. El request hace referencia a la obtención del enlace de Rapi API con todas sus credenciales que necesitamos, ademas del encabezado y otros requerimientos.
+
+### Arquitectura Mule ESB Comida with Rapi Api
+![1](https://github.com/tatcjho/-Mule-ESB-Comida-with-Rapid-Api/blob/main/SOA%20COMIDA/11.PNG)
+
+### Configuracion del listener
+1) A continuación ponemos el path del servicio a obtener y seguido de "/" ponemos el parametro que queremos obtener.
+![2](https://github.com/tatcjho/-Mule-ESB-Comida-with-Rapid-Api/blob/main/SOA%20COMIDA/12.PNG)
+
+2) A continuación configuramos el puerto y el host. 
+![3](https://github.com/tatcjho/-Mule-ESB-Comida-with-Rapid-Api/blob/main/SOA%20COMIDA/13.PNG)
 
 
+### Configuracion del request
+1) Configuración de la url que obtenemos de la api 
+![4](https://github.com/tatcjho/-Mule-ESB-Comida-with-Rapid-Api/blob/main/SOA%20COMIDA/14.PNG)
 
+2) Configuración del path y del método  
+![5](https://github.com/tatcjho/-Mule-ESB-Comida-with-Rapid-Api/blob/main/SOA%20COMIDA/15.PNG)
+
+
+1) Configuración de la url que obtenemos de la api 
+![6](https://github.com/tatcjho/-Mule-ESB-Comida-with-Rapid-Api/blob/main/SOA%20COMIDA/16.PNG)
+
+
+### Ejecución
+![7](https://github.com/tatcjho/-Mule-ESB-Comida-with-Rapid-Api/blob/main/SOA%20COMIDA/17.PNG)
+
+### Pruebas
+2) Ingresamos a través del navegador, con el host, el puerto y la solicitud que enviamos como se visualiza a continuación:  
+![8](https://github.com/tatcjho/-Mule-ESB-Comida-with-Rapid-Api/blob/main/SOA%20COMIDA/18.PNG)
+
+En este ejemplo agregamos la palabra "apple" y obtuvimos el resultado. 
 
