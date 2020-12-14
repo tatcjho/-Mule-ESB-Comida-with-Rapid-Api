@@ -61,7 +61,7 @@ La arqutiectura que se visualiza a continuación es un HTTP listener, donde indi
 
 ### Pruebas
 2) Ingresamos a través del navegador, con el host, el puerto y la solicitud que enviamos como se visualiza a continuación:  
-![8](https://github.com/tatcjho/-Mule-ESB-Comida-with-Rapid-Api/blob/main/SOA%20COMIDA/18.PNG)
+![8](https://github.com/tatcjho/-Mule-ESB-Comida-with-Rapid-Api/blob/main/comidaprueba.jpeg)
 
 En este ejemplo agregamos la palabra "apple" y obtuvimos el resultado. 
 
